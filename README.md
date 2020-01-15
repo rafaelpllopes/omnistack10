@@ -13,3 +13,4 @@ Semana OmniStack 10, criação de uma aplicação para cadastrar devs e buscar p
 # Para utilizar
 
 Ter uma copia do projeto no computador, ter Nodejs instalado, instalar as dependencias via yarn, ter o MongoDB, configurar a conexão com o MongoDB na aplicação.
+Criar config.json { "user": "", "password": "", "db": "" }, na raiz do projeto
