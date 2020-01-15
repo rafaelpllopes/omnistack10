@@ -7,6 +7,11 @@ routes.route('/devs')
     .post(DevController.store)
     .get(DevController.index)
 
+routes.route('/devs/:id')
+    .get(DevController.show)
+    .put(DevController.update)
+    .delete(DevController.destroy)
+
 routes.route('/search')
     .get(SearchController.index)
 

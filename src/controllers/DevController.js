@@ -11,13 +11,41 @@ module.exports = {
     },
 
     // Lista um unico dev
-    async show(request, response) {},
+    async show(request, response) {
+        const { id } = request.params
+        const dev = await Dev.findById(id)
+        return response.json(dev)
+    },
 
     // Deleta um dev
-    async destroy(request, response) {},
+    async destroy(request, response) {
+        const { id } = request.params
+        const dev = await Dev.deleteOne({
+            _id: id
+        })
+        return response.json(dev)
+    },
 
     // Atualiza um dev
-    async update(request, response) {},
+    async update(request, response) {
+        const { id } = request.params
+        const { avatar_url, latitude, longitude, techs } = request.body
+
+        const techsArray = parseStringAsArray(techs)
+
+        const location = {
+            type: 'Point',
+            coordinates: [longitude, latitude]
+        }
+
+        const dev = await Dev.updateOne({ _id: id }, {
+            avatar_url,
+            location,
+            techs: techsArray
+        })
+
+        return response.json(dev)
+    },
 
     // Cadastra um dev
     async store(request, response) {
