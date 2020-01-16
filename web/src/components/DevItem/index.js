@@ -2,7 +2,7 @@ import React from 'react'
 
 import './styles.css'
 
-function DevItem({ dev, deleteDev }) {
+function DevItem({ dev, deleteDev, editDev }) {
 
     return (
         <li className="dev-item">
@@ -15,7 +15,9 @@ function DevItem({ dev, deleteDev }) {
             </header>
             <p>{dev.bio}</p>
             <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
-            <button onClick={deleteDev}>Excluir</button>
+            <div className="btn-group">
+                <button className="btn" onClick={deleteDev}>Excluir</button>
+            </div>
         </li>
     )
 }

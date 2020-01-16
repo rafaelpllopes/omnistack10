@@ -51,7 +51,7 @@ li.dev-item a:hover {
 }
 
 li.dev-item button {
-    width: 100%;
+    width: 25%;
     border: 0;
     margin-top: 10px;
     background: #7d40e7;
@@ -66,4 +66,14 @@ li.dev-item button {
 
 li.dev-item button {
     background: #6931ca;
+}
+
+button .btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    margin-left: 10px;
 }
