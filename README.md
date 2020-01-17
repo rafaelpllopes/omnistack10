@@ -6,8 +6,8 @@ Semana OmniStack 10, criação de uma aplicação para cadastrar devs e buscar p
 ## Feito com
 
 - Backend: API feita em Nodejs, utilizando yarn, express, mongoose;
-- Frontend: reactjs
-- Mobile: react Native
+- Frontend: React
+- Mobile: React Native, atraves de expo
 - Banco de Dados: MongoDB
 
 # Para utilizar
