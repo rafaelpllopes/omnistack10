@@ -3,8 +3,14 @@ const  mongoose = require('mongoose')
 const fs = require('fs')
 const routes = require('./routes')
 const cors = require('cors')
+const http = require('http')
+
+const { setupWebsocket } = require('./websocket')
 
 const app = express()
+const server = http.Server(app)
+
+setupWebsocket(server)
 
 const { user, password, db } = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
@@ -17,4 +23,4 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(3333, () => console.log('Servidor rodando na porta 3333'))
+server.listen(3333, () => console.log('Servidor rodando na porta 3333'))
